@@ -1,0 +1,163 @@
+include ./blocks/slide.jade
+include ./blocks/cover.jade
+include ./blocks/quote.jade
+include ./blocks/frame.jade
+
+- var title = "Тестирование для&nbsp;разработчиков"
+
+doctype html
+html(lang='ru')
+  head
+    title !{title}
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x9.css')
+    link(rel='stylesheet', href='theme.css')
+    link(rel='stylesheet', href='slides.css')
+  body.shower.list
+    header.caption
+      h1 !{title}
+    +slide({name: 'cover', classes:'cover'})
+      +cover('pictures/cover.jpg')
+    +slide({header: "", classes: ""})
+      div(style="margin-left: 50%; width: 60%; margin-top: 100px")
+        ul
+          li Верстала еще на таблицах
+          li Была начальником отдела фронтенда
+          li Выгорела
+          li Уволилась
+          li.next Счастливая безработная
+        p(style="margin-top: 40px")
+          img.logo(src="pictures/minskcss.png")
+          img.logo(src="pictures/minskjs.png")
+          img.logo(src="pictures/css-minsk-js.svg", style="background-color: #2b2727; height: 75px")
+      +cover('pictures/about-cover.jpg')
+    +slide({header: "Как не быть мудаком", classes: "", shout: true})
+      img.cover.width(src='pictures/cap-says.jpg')
+    +slide({header: "Дизайн - Имплементация - Тестирование", classes: "", shout: true})
+    +slide({classes: ""})
+      h2.square Дизайн
+    +slide({header: "Дизайнер не знает верстку", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle Он мыслит и рисует на плоскости
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "Шаги к провалу с этапа дизайна", classes: "label-header clear"})
+      ul
+        li Нет UI Kit, или он плохой
+        li Кардинальные изменения UX при RWD
+        li Хаотичные отступы, размеры
+        li.next Вообще все не очень
+          +cover('pictures/bad.jpg')
+    +slide({header: "Плохой дизайн сложно превратить<br>в хороший код", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle Долго и требует большого опыта
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "Плохой дизайн в коде", classes: "label-header"})
+      +cover('pictures/bad-code.jpg')
+      span.next
+        +cover('pictures/bad-code-2.jpg')
+      p.captain-text.next
+        span.subtitle П****Ц
+    +slide({header: "Увидел проблему в макете &mdash;<br>к дизайнеру и менеджеру", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle
+          span.strike Пусть знают как ты страдаешь
+        br
+        span.subtitle Обсудить решение
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "Проще и дешевле исправить дизайн,<br>чем писать плохой код", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle Клиенту тоже можно объяснить
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "Плохой код больно писать и поддерживать", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle Никто не любит говнокод
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "Не пиши говнокод", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle Пиши хороший код
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({classes: ""})
+      h2.square Тестирование
+    +slide({header: "Во время теста ты &mdash; злоумышленник", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle Делай сайту больно!
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "Ручное тестирование", classes: 'label-header'})
+      ol
+        li Визуальное соответствие макету
+          +cover('pictures/halfs/diff.jpg')
+        li.next Поведение (UX)
+          +cover('pictures/halfs/ux.jpg')
+        li.next Responsive ("теребоькаем" окошком)
+          video(src='pictures/window-terebonk.mp4', class='place right cover height' autoplay muted loop playsinline)
+        li.next Кроссбраузерность и кроссплатформенность
+          ul
+            li Пункты 1-3 в других браузерах и на других устройствах
+          +cover('pictures/halfs/devices.jpg')
+    +slide({header: "Чем проверять", classes: 'label-header'})
+      ul
+        li Глазами
+          ul
+            li Все должно работать по ТЗ (не по ТЗ тоже должно работать)
+          +cover('pictures/halfs/watch2.jpg')
+        li.next Руками
+          ul
+            li Кликать, водить курсором, тыкать пальцем
+            li Все возможные и невозможные сценарии
+            li Даже есть кажется, что так не будут делать (БУДУТ!)
+          +cover('pictures/halfs/hands.jpg')
+        li.next Инструментами
+    +slide({header: "И это каждый раз проверять?!", shout: true, classes: 'label-header'})
+      p.captain-text.next
+        span.subtitle Да
+      img.cover.width(src='pictures/cover-blur.jpg')
+    +slide({header: "Минимальный набор тестов", classes: "label-header"})
+      ul
+        li Картинка соответствует макету на всех разрешениях
+        li Ожидаемое поведение по ТЗ
+        li Изменение ширины и высоты не ломает ничего
+        li Нет ошибок в консоли и DevTools
+        li Проверено в вечнозеленых мобильных и десктопах
+      +cover('pictures/halfs/smoke.jpg')
+    +slide({header: "А если нашел баг не там, где сейчас делаешь?", shout: true, classes: 'label-header'})
+      img.cover.width(src='pictures/cover-blur.jpg')
+    +slide({header: "Видишь баг &mdash; исправь", shout: true, classes: 'label-header captain'})
+      p.captain-text.next
+        span.subtitle Даже если делал не ты
+      p.captain-text.next
+        span.subtitle Даже если это другой блок
+      p.captain-text.next
+        span.subtitle Даже если кажется, что “и так сойдет”
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "Исправить долго &mdash;<br>заводи баг и TODO в код", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle И говори менеджеру
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "О любой непонятной ситуации говори менеджеру", shout: true, classes: 'label-header captain'})
+      p.captain-text.next
+        span.subtitle Нет, я не устану это повторять
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({header: "Подводя итог", classes: "label-header"})
+      ul
+        li Смотри на дизайн ПЕРЕД работой
+        li.next Проверяй за собой ПОСЛЕ работы
+        li.next Не бойся обсуждать и вносить изменения в процессе
+        li.next Будь ответственным, черт возьми!
+      +cover('pictures/halfs/i-do.jpg')
+    +slide({header: "Не будь ленивым кодером", shout: true, classes: 'label-header captain'})
+      p.captain-text.next
+        span.subtitle Будь котиком!
+      img.cover.width(src='pictures/cap.jpg')
+    +slide({name: 'theend', header: "", classes: ''})
+      p.end-link(style="position: absolute; bottom: 5%")
+        a.bigger(href="http://bit.ly/fc2019-frameworks" target="_blank") bit.ly/fc2019-frameworks
+        br
+        | Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      img.cover(src='pictures/end.jpg')
+
+    .progress
+    script(src='shower/shower.min.js')
