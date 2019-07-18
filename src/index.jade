@@ -18,6 +18,7 @@ html(lang='ru')
   body.shower.list
     header.caption
       h1 !{title}
+      p(style="font-weight: bold") Как не быть мудаком
     +slide({name: 'cover', classes:'cover'})
       +cover('pictures/cover.jpg')
     +slide({header: "", classes: ""})
@@ -33,17 +34,27 @@ html(lang='ru')
           img.logo(src="pictures/minskjs.png")
           img.logo(src="pictures/css-minsk-js.svg", style="background-color: #2b2727; height: 75px")
       +cover('pictures/about-cover.jpg')
-    +slide({header: "Как не быть мудаком", classes: "", shout: true})
-      img.cover.width(src='pictures/cap-says.jpg')
-    +slide({header: "Дизайн - Имплементация - Тестирование", classes: "", shout: true})
-    +slide({classes: ""})
-      h2.square Дизайн
+    +slide({header: "", classes: "red"})
+      h2.shout.shrink(style="margin-top: -70px; color: #fff; font-size: 5em") Как не быть мудаком
+        span(style="color: #a11212") *
+      p(style="opacity: 0.5; color: #aaa; position: absolute; bottom: 200px; left: 100px") 
+        span(style="color: #a11212") *
+        | Альтернативное название
+      img.cover.width(src='pictures/cap-says.png')
+    +slide({header: "", classes: "", shout: true})
+      h2(style="font-size: 5em; margin-top: 50px")
+        div(style="text-align: left") Дизайн &rarr;
+        div(style="text-align: center") Имплементация &rarr;
+        div(style="text-align: right") Тестирование
+    +slide({classes: "red"})
+      h2.square Дизайн<br>и имплементация
     +slide({header: "Дизайнер не знает верстку", shout: true, classes: 'label-header captain'})
       p.captain-text
         span.subtitle Он мыслит и рисует на плоскости
       img.cover.width(src='pictures/cap.jpg')
     +slide({header: "Шаги к провалу с этапа дизайна", classes: "label-header clear"})
       ul
+        li Дизайн НЕ компонентный
         li Нет UI Kit, или он плохой
         li Кардинальные изменения UX при RWD
         li Хаотичные отступы, размеры
@@ -53,18 +64,18 @@ html(lang='ru')
       p.captain-text
         span.subtitle Долго и требует большого опыта
       img.cover.width(src='pictures/cap.jpg')
-    +slide({header: "Плохой дизайн в коде", classes: "label-header"})
+    +slide({header: "", classes: "label-header"})
       +cover('pictures/bad-code.jpg')
-      span.next
-        +cover('pictures/bad-code-2.jpg')
+      +cover('pictures/bad-code-2.jpg')
       p.captain-text.next
         span.subtitle П****Ц
     +slide({header: "Увидел проблему в макете &mdash;<br>к дизайнеру и менеджеру", shout: true, classes: 'label-header captain'})
-      p.captain-text
+      p.captain-text(style="bottom: 5%; line-height: 1.5;")
         span.subtitle
           span.strike Пусть знают как ты страдаешь
         br
         span.subtitle Обсудить решение
+      p.anti-mudak Правило антимудака #1
       img.cover.width(src='pictures/cap.jpg')
     +slide({header: "Проще и дешевле исправить дизайн,<br>чем писать плохой код", shout: true, classes: 'label-header captain'})
       p.captain-text
@@ -77,42 +88,64 @@ html(lang='ru')
     +slide({header: "Не пиши говнокод", shout: true, classes: 'label-header captain'})
       p.captain-text
         span.subtitle Пиши хороший код
+      p.anti-mudak Правило антимудака #2
       img.cover.width(src='pictures/cap.jpg')
-    +slide({classes: ""})
+    +slide({classes: "red"})
       h2.square Тестирование
+    +slide({header: "", classes:''})
+      h2.shout.shrink(style="margin-top: -70px; font-size: 5em") 
+        span(style="font-size: 0.5em") &laquo;
+        | Хуяк, хуяк, и в продакшн!
+        span(style="font-size: 0.5em") &raquo;
+      p.captain-text
+        span.subtitle(style="background-color: transparent; opacity: 0.75") &mdash; Любимая схема мудаков
+    +slide({header: "", classes:'red'})
+      h2.shout.shrink(style="margin-top: -70px; color: #fff; font-size: 5em") Это не баг, а фича!
+      p.captain-text.next
+        span.subtitle Мммм... Нет!
+    +slide({header: "Проверь свою работу. Тестируй сам", shout: true, classes: 'label-header captain'})
+      p.captain-text(style="bottom: 5%; line-height: 1.5;")
+        span.subtitle Отбери работу у тестировщика
+        br
+        span.subtitle
+          span.strike И его зарплату
+      p.anti-mudak Правило антимудака #3
+      img.cover.width(src='pictures/cap.jpg')
     +slide({header: "Во время теста ты &mdash; злоумышленник", shout: true, classes: 'label-header captain'})
       p.captain-text
         span.subtitle Делай сайту больно!
+      p.anti-mudak Правило антимудака #4
       img.cover.width(src='pictures/cap.jpg')
     +slide({header: "Ручное тестирование", classes: 'label-header'})
       ol
         li Визуальное соответствие макету
-          +cover('pictures/halfs/diff.jpg')
         li.next Поведение (UX)
-          +cover('pictures/halfs/ux.jpg')
-        li.next Responsive ("теребоькаем" окошком)
-          video(src='pictures/window-terebonk.mp4', class='place right cover height' autoplay muted loop playsinline)
+        li.next Responsive ("теребонькаем" окошком)
         li.next Кроссбраузерность и кроссплатформенность
           ul
             li Пункты 1-3 в других браузерах и на других устройствах
-          +cover('pictures/halfs/devices.jpg')
+        +cover('pictures/check.jpg')
     +slide({header: "Чем проверять", classes: 'label-header'})
       ul
         li Глазами
           ul
             li Все должно работать по ТЗ (не по ТЗ тоже должно работать)
-          +cover('pictures/halfs/watch2.jpg')
+          +cover('pictures/watch.jpg')
         li.next Руками
           ul
             li Кликать, водить курсором, тыкать пальцем
             li Все возможные и невозможные сценарии
             li Даже есть кажется, что так не будут делать (БУДУТ!)
-          +cover('pictures/halfs/hands.jpg')
+          +cover('pictures/hands.jpg')
         li.next Инструментами
-    +slide({header: "И это каждый раз проверять?!", shout: true, classes: 'label-header'})
-      p.captain-text.next
-        span.subtitle Да
-      img.cover.width(src='pictures/cover-blur.jpg')
+          ul
+            li Нет ничего лучше, чем реальный девайс!
+            li Автоматизируй рутину
+          +cover('pictures/devices.jpg')
+    +slide({header: "", classes: 'red'})
+      h2.shout.shrink(style="margin-top: -70px; color: #fff; font-size: 5em") И это каждый раз проверять?!
+      p.captain-text.next(style="bottom: 10%")
+        span.subtitle Мммм... Да!
     +slide({header: "Минимальный набор тестов", classes: "label-header"})
       ul
         li Картинка соответствует макету на всех разрешениях
@@ -120,9 +153,9 @@ html(lang='ru')
         li Изменение ширины и высоты не ломает ничего
         li Нет ошибок в консоли и DevTools
         li Проверено в вечнозеленых мобильных и десктопах
-      +cover('pictures/halfs/smoke.jpg')
-    +slide({header: "А если нашел баг не там, где сейчас делаешь?", shout: true, classes: 'label-header'})
-      img.cover.width(src='pictures/cover-blur.jpg')
+      +cover('pictures/smoke.jpg')
+    +slide({header: "А если нашел баг не там, где сейчас делаешь?", shout: true, classes: 'label-header red'})
+      img.cover.width(src='pictures/what-if.png')
     +slide({header: "Видишь баг &mdash; исправь", shout: true, classes: 'label-header captain'})
       p.captain-text.next
         span.subtitle Даже если делал не ты
@@ -130,29 +163,35 @@ html(lang='ru')
         span.subtitle Даже если это другой блок
       p.captain-text.next
         span.subtitle Даже если кажется, что “и так сойдет”
+      p.anti-mudak Правило антимудака #5
       img.cover.width(src='pictures/cap.jpg')
     +slide({header: "Исправить долго &mdash;<br>заводи баг и TODO в код", shout: true, classes: 'label-header captain'})
       p.captain-text
         span.subtitle И говори менеджеру
+      p.anti-mudak Правило антимудака #6
       img.cover.width(src='pictures/cap.jpg')
     +slide({header: "О любой непонятной ситуации говори менеджеру", shout: true, classes: 'label-header captain'})
       p.captain-text.next
         span.subtitle Нет, я не устану это повторять
+      p.anti-mudak Правило антимудака #7
       img.cover.width(src='pictures/cap.jpg')
     +slide({header: "Подводя итог", classes: "label-header"})
       ul
         li Смотри на дизайн ПЕРЕД работой
         li.next Проверяй за собой ПОСЛЕ работы
         li.next Не бойся обсуждать и вносить изменения в процессе
-        li.next Будь ответственным, черт возьми!
-      +cover('pictures/halfs/i-do.jpg')
-    +slide({header: "Не будь ленивым кодером", shout: true, classes: 'label-header captain'})
+        li.next Будь ответственным 
+          span(style="text-decoration: line-through") мудаком
+          | !
+      +cover('pictures/i-do.jpg')
+    +slide({header: "Не будь мудаком", shout: true, classes: 'label-header captain'})
       p.captain-text.next
         span.subtitle Будь котиком!
+      p.anti-mudak Главное правило антимудака #8
       img.cover.width(src='pictures/cap.jpg')
     +slide({name: 'theend', header: "", classes: ''})
-      p.end-link(style="position: absolute; bottom: 5%")
-        a.bigger(href="http://bit.ly/fc2019-frameworks" target="_blank") bit.ly/fc2019-frameworks
+      p.end-link(style="position: absolute; bottom: 5%; background-color: #1b1b1b")
+        a.bigger(href="http://bit.ly/BeerJS-antimudak" target="_blank") bit.ly/BeerJS-antimudak
         br
         | Александра Шинкевич (
         a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
