@@ -18,7 +18,7 @@ html(lang='ru')
   body.shower.list
     header.caption
       h1 !{title}
-      p(style="font-weight: bold") Как не быть мудаком
+      p(style="font-weight: bold") Как не быть мудаком, 18+
     +slide({name: 'cover', classes:'cover'})
       +cover('pictures/cover.jpg')
     +slide({header: "", classes: ""})
@@ -39,7 +39,7 @@ html(lang='ru')
         span(style="color: #a11212") *
       p(style="opacity: 0.5; color: #aaa; position: absolute; bottom: 200px; left: 100px") 
         span(style="color: #a11212") *
-        | Альтернативное название
+        | Альтернативное название, 18+
       img.cover.width(src='pictures/cap-says.png')
     +slide({header: "", classes: "", shout: true})
       h2(style="font-size: 5em; margin-top: 50px")
@@ -58,7 +58,7 @@ html(lang='ru')
         li Нет UI Kit, или он плохой
         li Кардинальные изменения UX при RWD
         li Хаотичные отступы, размеры
-        li.next Вообще все не очень
+        li Вообще все не очень
           +cover('pictures/bad.jpg')
     +slide({header: "Плохой дизайн сложно превратить<br>в хороший код", shout: true, classes: 'label-header captain'})
       p.captain-text
@@ -111,17 +111,12 @@ html(lang='ru')
           span.strike И его зарплату
       p.anti-mudak Правило антимудака #3
       img.cover.width(src='pictures/cap.jpg')
-    +slide({header: "Во время теста ты &mdash; злоумышленник", shout: true, classes: 'label-header captain'})
-      p.captain-text
-        span.subtitle Делай сайту больно!
-      p.anti-mudak Правило антимудака #4
-      img.cover.width(src='pictures/cap.jpg')
     +slide({header: "Ручное тестирование", classes: 'label-header'})
       ol
         li Визуальное соответствие макету
-        li.next Поведение (UX)
-        li.next Responsive ("теребонькаем" окошком)
-        li.next Кроссбраузерность и кроссплатформенность
+        li Поведение (UX)
+        li Responsive ("теребонькаем" окошком)
+        li Кроссбраузерность и кроссплатформенность
           ul
             li Пункты 1-3 в других браузерах и на других устройствах
         +cover('pictures/check.jpg')
@@ -135,25 +130,22 @@ html(lang='ru')
           ul
             li Кликать, водить курсором, тыкать пальцем
             li Все возможные и невозможные сценарии
-            li Даже есть кажется, что так не будут делать (БУДУТ!)
+            li Даже если кажется, что так не будут делать (БУДУТ!)
           +cover('pictures/hands.jpg')
         li.next Инструментами
           ul
             li Нет ничего лучше, чем реальный девайс!
             li Автоматизируй рутину
           +cover('pictures/devices.jpg')
+    +slide({header: "Во время теста ты &mdash; злоумышленник", shout: true, classes: 'label-header captain'})
+      p.captain-text
+        span.subtitle Делай сайту больно!
+      p.anti-mudak Правило антимудака #4
+      img.cover.width(src='pictures/cap.jpg')
     +slide({header: "", classes: 'red'})
       h2.shout.shrink(style="margin-top: -70px; color: #fff; font-size: 5em") И это каждый раз проверять?!
       p.captain-text.next(style="bottom: 10%")
         span.subtitle Мммм... Да!
-    +slide({header: "Минимальный набор тестов", classes: "label-header"})
-      ul
-        li Картинка соответствует макету на всех разрешениях
-        li Ожидаемое поведение по ТЗ
-        li Изменение ширины и высоты не ломает ничего
-        li Нет ошибок в консоли и DevTools
-        li Проверено в вечнозеленых мобильных и десктопах
-      +cover('pictures/smoke.jpg')
     +slide({header: "А если нашел баг не там, где сейчас делаешь?", shout: true, classes: 'label-header red'})
       img.cover.width(src='pictures/what-if.png')
     +slide({header: "Видишь баг &mdash; исправь", shout: true, classes: 'label-header captain'})
@@ -171,7 +163,7 @@ html(lang='ru')
       p.anti-mudak Правило антимудака #6
       img.cover.width(src='pictures/cap.jpg')
     +slide({header: "О любой непонятной ситуации говори менеджеру", shout: true, classes: 'label-header captain'})
-      p.captain-text.next
+      p.captain-text
         span.subtitle Нет, я не устану это повторять
       p.anti-mudak Правило антимудака #7
       img.cover.width(src='pictures/cap.jpg')
@@ -185,7 +177,7 @@ html(lang='ru')
           | !
       +cover('pictures/i-do.jpg')
     +slide({header: "Не будь мудаком", shout: true, classes: 'label-header captain'})
-      p.captain-text.next
+      p.captain-text
         span.subtitle Будь котиком!
       p.anti-mudak Главное правило антимудака #8
       img.cover.width(src='pictures/cap.jpg')
